@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Invitaciones</title>
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #fce4ec; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 400px; }
+        h2 { color: #e24bd1; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #e24bd1; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background-color: #c23bad; }
+        #resultado { margin-top: 20px; padding: 10px; background: #f9f9f9; border: 1px dashed #e24bd1; word-break: break-all; font-size: 14px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Generador de Links</h2>
+        <input type="text" id="nombreInvitado" placeholder="Nombre de la Familia/Invitado">
+        <input type="number" id="pasesInvitado" placeholder="Número de pases">
+        <button onclick="generarLink()">Generar Link de WhatsApp</button>
+        
+        <div id="resultado">
+            <p id="linkTexto"></p>
+            <button onclick="copiarLink()" style="background-color: #444;">Copiar Link</button>
+        </div>
+    </div>
+
+    <script>
+        function generarLink() {
+            // CAMBIA ESTO por tu link real de GitHub cuando lo publiques
+            const baseURL = "https://tuusuario.github.io/tu-repo/"; 
+            
+            const nombre = encodeURIComponent(document.getElementById('nombreInvitado').value);
+            const pases = document.getElementById('pasesInvitado').value;
+            
+            if (nombre && pases) {
+                const finalURL = `${baseURL}?f=${nombre}&p=${pases}`;
+                document.getElementById('linkTexto').innerText = finalURL;
+                document.getElementById('resultado').style.display = 'block';
+            } else {
+                alert("Por favor rellena ambos campos");
+            }
+        }
+
+        function copiarLink() {
+            const link = document.getElementById('linkTexto').innerText;
+            navigator.clipboard.writeText(link);
+            alert("¡Link copiado al portapapeles!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+/* --- Variables de Diseño --- */
+:root {
+    --main-pink: #f46b8e;      /* Rosa coral */
+    --accent-red: #ff3c38;     /* Rojo sol */
+    --soft-yellow: #fff4b1;    /* Amarillo suave */
+    --dark-text: #333333;
+    --light-text: #ffffff;
+    --white-transparent: rgba(255, 255, 255, 0.9);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Fuentes */
+    --font-script: 'Great Vibes', cursive;
+    --font-serif: 'Merriweather', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+/* --- Estilos Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--soft-yellow);
+    color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* --- Reproductor de Audio Flotante --- */
+.audio-player {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.audio-btn {
+    background-color: var(--main-pink);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.audio-btn:active { transform: scale(0.9); }
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('../imgs/Header.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    padding: 20px;
+}
+
+.hero-name {
+    font-family: var(--font-script);
+    font-size: clamp(3.5rem, 12vw, 6rem);
+    margin: 10px 0;
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+}
+
+.hero-date {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-shadow: 1px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- Contador (Countdown) --- */
+.countdown-section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #ffffff, var(--main-pink));
+    text-align: center;
+}
+
+.timer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.timer-box {
+    background: white;
+    border: 2px solid var(--main-pink);
+    border-radius: 12px;
+    width: 75px;
+    padding: 10px;
+    box-shadow: var(--shadow-soft);
+}
+
+.timer-box span {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    display: block;
+}
+
+.timer-box p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--main-pink);
+}
+
+.phrase-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- Tarjetas de Eventos --- */
+.events-section {
+    padding: 60px 20px;
+    background-color: var(--main-pink);
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-script);
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.event-card {
+    background: var(--white-transparent);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: var(--shadow-soft);
+    border: 2px solid white;
+}
+
+.event-card h3 {
+    font-family: var(--font-serif);
+    color: var(--main-pink);
+    margin-bottom: 15px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-location {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: var(--soft-yellow);
+    color: var(--main-pink);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-location:hover {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+/* --- Sección Familia --- */
+.family-section {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, var(--main-pink), var(--soft-yellow));
+    text-align: center;
+    color: white;
+}
+
+.title-light {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.name-display {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.mt-4 { margin-top: 40px; }
+
+/* --- Mesa de Regalos --- */
+.gifts-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gift-card {
+    background: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    border: 2px dashed var(--main-pink);
+}
+
+.gift-icon {
+    font-size: 3rem;
+    color: var(--main-pink);
+    margin-bottom: 15px;
+}
+
+.btn-gift {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: var(--main-pink);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+/* --- WhatsApp / RSVP --- */
+.rsvp-section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, var(--soft-yellow), var(--main-pink));
+}
+
+.rsvp-box {
+    background: white;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* --- Galería --- */
+.gallery-section {
+    background-color: var(--main-pink);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.img-frame img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: var(--shadow-soft);
+}
+
+.nav-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+/* --- Footer --- */
+.footer {
+    padding: 80px 20px;
+    background: url('../imgs/fondo-2.jpg') center/cover;
+    text-align: center;
+}
+
+.footer-card {
+    background: white;
+    display: inline-block;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.footer-name {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--accent-red);
+}
+
+.footer-img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 600px) {
+    .timer-grid { gap: 8px; }
+    .timer-box { width: 65px; }
+    .hero-name { font-size: 4rem; }
+    .section-title { font-size: 2.8rem; }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mis XV Años - Karelyn Lizbeth</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link href="./assets/css/main.css" rel="stylesheet">
+
+    <script src="./assets/javascript/reloj.js" defer></script>
+    <script src="./assets/javascript/galeria.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof update_Countdown === "function") {
+                update_Countdown();
+                setInterval(update_Countdown, 1000);
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <div class="audio-player">
+        <audio id="bg-music" loop>
+            <source src="./assets/audio/song.mp3" type="audio/mp3">
+        </audio>
+        <button onclick="document.getElementById('bg-music').paused ? document.getElementById('bg-music').play() : document.getElementById('bg-music').pause()" class="audio-btn">
+            <i class="ri-music-2-fill"></i>
+        </button>
+    </div>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h2 class="fade-in">¡Mis XV Años!</h2>
+            <h1 class="hero-name">Karelyn Lizbeth</h1>
+            <h2 class="hero-date">30 • Abril • 2026</h2>
+        </div>
+    </header>
+
+    <section class="countdown-section">
+        <div class="timer-grid">
+            <div class="timer-box">
+                <span id="days">00</span>
+                <p>días</p>
+            </div>
+            <div class="timer-box">
+                <span id="hours">00</span>
+                <p>hrs</p>
+            </div>
+            <div class="timer-box">
+                <span id="minutes">00</span>
+                <p>min</p>
+            </div>
+            <div class="timer-box">
+                <span id="seconds">00</span>
+                <p>seg</p>
+            </div>
+        </div>
+        <div class="phrase-container">
+            <p>
+                "Hay momentos en la vida que son irrepetibles,<br>
+                pero compartirlos con las personas que más quieres<br>
+                los hace inolvidables."
+            </p>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <h2 class="section-title">Acompáñame</h2>
+        <div class="cards-container">
+            <article class="event-card">
+                <h3>Ceremonia Religiosa</h3>
+                <div class="card-img-wrapper">
+                    <img src="./assets/imgs/parroquia.jpg" alt="Parroquia">
+                </div>
+                <p class="venue">Parroquia de Analco</p>
+                <p class="time"><i class="ri-time-line"></i> 6:00 p.m.</p>
+                <a href="https://maps.app.goo.gl/WckmMhkhL9YzU4yC8" target="_blank" class="btn-location">
+                    <i class="ri-map-pin-line"></i> Ver mapa
+                </a>
+            </article>
+
+            <article class="event-card">
+                <h3>Evento</h3>
+                <div class="card-img-wrapper">
+                    <img src="./assets/imgs/salon.jpg" alt="Salón">
+                </div>
+                <p class="venue">Recepciones Camelot</p>
+                <p class="time"><i class="ri-time-line"></i> 8:00 p.m.</p>
+                <a href="https://maps.app.goo.gl/jsMMa3V7Fk2Xmepv5" target="_blank" class="btn-location">
+                    <i class="ri-map-pin-line"></i> Ver mapa
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <section class="family-section">
+        <div class="family-content">
+            <h2 class="title-light">En agradecimiento a mis padres</h2>
+            <p class="name-display">Adriana Rojas Conde</p>
+            <p class="name-display">Erik Lopez Hernandez</p>
+            
+            <h2 class="title-light mt-4">Y mis padrinos</h2>
+            <p class="name-display">Alma Angelica Rojas Conde</p>
+            <p class="name-display">Jose Gildardo Juarez Carranza</p>
+        </div>
+    </section>
+
+    <section class="gifts-section">
+        <div class="gift-card">
+            <i class="ri-gift-2-line gift-icon"></i>
+            <p class="gift-text">
+                Mi mejor regalo es compartir contigo este gran día. Sin embargo, si deseas obsequiarme algo, puedes hacerlo a través de mi mesa de regalos.
+            </p>
+            <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51918819" target="_blank" class="btn-gift">
+                Ver mesa de regalos
+            </a>
+        </div>
+    </section>
+
+    <section class="rsvp-section">
+        <div class="rsvp-box">
+            <h2 class="rsvp-title">Confirma tu asistencia</h2>
+            <p>Espero de corazón puedas acompañarme, por favor confirma tu asistencia.</p>
+            <p class="passes-count"><strong>(<span id="num-pases">1</span> pases reservados)</strong></p>
+            
+            <a href="#" id="btn-whatsapp" target="_blank" class="btn-whatsapp">
+                <i class="ri-whatsapp-line"></i> Confirmar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2 class="section-title text-white">Galería</h2>
+        <div class="gallery-slider">
+            <button onclick="move(-1)" class="nav-btn"><i class="ri-arrow-left-s-line"></i></button>
+            <div class="img-frame">
+                <img id="Galeria-1" src="./assets/imgs/Galeria/IMG (1).jpg" alt="Galería">
+            </div>
+            <button onclick="move(1)" class="nav-btn"><i class="ri-arrow-right-s-line"></i></button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-card">
+            <h1 class="footer-name">Karelyn Lizbeth</h1>
+            <h3>¡Los esperamos!</h3>
+            <img src="./assets/imgs/Despedida.jpg" alt="Foto de despedida" class="footer-img">
+        </div>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const familia = urlParams.get('f') || "Invitado Especial";
+        const pases = urlParams.get('p') || "1";
+
+        const spanPases = document.getElementById('num-pases');
+        if(spanPases) spanPases.innerText = pases;
+
+        const telefono = "5212225074798";
+        const mensaje = `¡Hola! Confirmo mi asistencia para los XV de Lizbeth. Familia: ${familia}. Pases: ${pases}.`;
+        const whatsappLink = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+        document.getElementById('btn-whatsapp').href = whatsappLink;
+    </script>
+
+</body>
+</html>
